@@ -12,7 +12,7 @@ from Lib.messagebox import MessageBox
 from Lib.supabase import Supabase
 from Lib.wordlist import Wordlist
 
-os.makedirs("./Accessed Databases")
+os.makedirs("./Accessed Databases", exist_ok=True)
 
 try: LowLevel.LoadFontFromTTF("./Assets/Fonts/Horizon.ttf")
 except: pass
