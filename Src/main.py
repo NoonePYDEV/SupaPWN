@@ -54,7 +54,7 @@ def UpdateDistDirPreview(e) -> None:
                 tail -= 1
 
         return ellipsis
-    path = f"./Accessed Databases/{CleanFolderName(workspaceNameEntry.get())}"
+    path = f"./Src/Accessed Databases/{CleanFolderName(workspaceNameEntry.get())}"
     distDirPreviewLabel.configure(text=TruncateMiddle(path, previewFont, MAX_LABEL_WIDTH))
 
 import threading
@@ -105,9 +105,9 @@ def StartScan() -> None:
                 dbUrlValue.configure(text="Copied")
                 dbUrlValue.after(1000, lambda: dbUrlValue.configure(text=url))
 
-            os.makedirs(f"./Accessed Databases/{workspace}", exist_ok=True)
+            os.makedirs(f"./Src/Accessed Databases/{workspace}", exist_ok=True)
 
-            with open(f"./Accessed Databases/{workspace}/{name}.json", "w", encoding='utf-8') as f:
+            with open(f"./Src/Accessed Databases/{workspace}/{name}.json", "w", encoding='utf-8') as f:
                 json.dump(content, f, indent=4)
             
             frame = ctk.CTkFrame(logsFrame, height=75, width=529.5, fg_color="#222222", corner_radius=5)
@@ -264,7 +264,7 @@ workspaceNameFrame.place(x=225, y=12.5)
 workspaceNameEntry = ctk.CTkEntry(workspaceNameFrame, height=30, width=325, fg_color="#181818", placeholder_text="Workspace Name", text_color="#ffffff", corner_radius=5, border_width=0)
 workspaceNameEntry.place(x=0, y=0)
 
-distDirPreviewLabel = ctk.CTkLabel(workspaceNameFrame, text="./Accessed Databases/", font=("Arial", 10), text_color="#ffffff", fg_color="#1D1D1D", height=12)
+distDirPreviewLabel = ctk.CTkLabel(workspaceNameFrame, text="./Src/Accessed Databases/", font=("Arial", 10), text_color="#ffffff", fg_color="#1D1D1D", height=12)
 distDirPreviewLabel.place(relx=0.5, y=40, anchor='center')
 
 workspaceNameEntry.bind("<KeyRelease>", UpdateDistDirPreview)
