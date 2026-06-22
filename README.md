@@ -8,6 +8,8 @@ A Windows-based penetration testing tool targeting misconfigured Supabase instan
 
 ## Overview
 
+<img width="1170" height="733" alt="image" src="https://github.com/user-attachments/assets/bab5905f-3e75-49e7-8fe2-1adbc11a4771" />
+
 Many Supabase projects expose their REST API with overly permissive Row Level Security (RLS) policies, or none at all. SupaPWN automates the discovery of accessible tables by attempting to read from a curated list of commonly used table names via the PostgREST API endpoint. Successfully reached tables are saved to disk as JSON files for later review.
 
 ### Key Features
